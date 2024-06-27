@@ -1,4 +1,4 @@
-# library-management system
+# Library-Management System
 
 Queries and Analysis
 The project includes various SQL queries and data analysis tasks to extract valuable insights from the library's data. Some of the key queries implemented include:
