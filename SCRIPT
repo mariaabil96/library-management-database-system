@@ -129,4 +129,78 @@ INSERT INTO CUSTOMER(Customer_Id,Customer_name,Customer_address,Reg_date) VALUES
 
 #DISPLAYING CUSTOMER TABLE
 SELECT * FROM CUSTOMER;
+#INSERTING VALUES TO IssueStatus TABLE
+INSERT INTO IssueStatus(Issue_Id,Issued_cust,Issue_date,Issued_book_name,Isbn_book) VALUES ('IS1', 'C1','2023-05-01','abc','978-0-553-29698-2'),
+('IS2', 'C2','2023-05-02','cde','978-0-141-44171-6'),
+('IS3', 'C3','2023-05-03','gfd','978-0-307-58837-1'),
+('IS4', 'C4','2023-05-04','poi','978-0-09-957807-9'),
+('IS5', 'C5','2023-05-05','jkl','978-0-14-044930-3');
+
+
+#DISPLAYING IssueStatus TABLE
+SELECT * FROM IssueStatus;
+
+#INSERTING VALUES TO ReturnStatus TABLE
+INSERT INTO ReturnStatus(Return_id,Return_cust,Return_date,Return_book_name,isbn_book2) VALUES 
+('RS1', 'C1 ','2023-06-06','ggg','978-0-553-29698-2'),
+('RS2', 'C2 ','2023-06-07','kkkk','978-0-679-76489-8'),
+('RS3', 'C5 ','2023-06-08','sss','978-0-525-47535-5'),
+('RS4', 'C8 ','2023-06-09','sssdf','978-0-393-91257-8'),
+('RS5', 'C10 ','2023-06-10','ddd','978-0-14-044930-3');
+
+
+
+#DISPLAYING ReturnStatus TABLE
+SELECT * FROM ReturnStatus;
+
+#1.Retrieve the book title, category, and rental price of all available books. 
+
+SELECT book_title, category, rental_price FROM books WHERE Status = 'Yes';
+
+#2. List the employee names and their respective salaries in descending order of salary. 
+SELECT emp_name, salary FROM employee ORDER BY Salary DESC;
+
+#3. Retrieve the book titles and the corresponding customers who have issued those books. 
+
+SELECT issuestatus.Issued_book_name, customer.Customer_name FROM issuestatus INNER JOIN
+customer on issuestatus.Issued_cust = customer.Customer_Id;
+
+#4. Display the total count of books in each category. 
+SELECT Category, COUNT(Book_title) FROM books GROUP BY Category;
+5. Retrieve the employee names and their positions for the employees whose salaries are above Rs.50,000. 
+SELECT emp_name, position FROM employee WHERE Salary > 50000;
+ 
+6. List the customer names who registered before 2022-01-01 and have not issued any books yet. 
+
+SELECT customer_name FROM customer WHERE Reg_date < '2022-01-01' AND Customer_Id NOT IN
+(SELECT issued_cust FROM issuestatus);
+ 
+7. Display the branch numbers and the total count of employees in each branch. 
+
+
+SELECT branch_no, COUNT(emp_id) FROM employee GROUP BY branch_no;
+ 
+
+8. Display the names of customers who have issued books in the month of June 2023.
+
+SELECT customer.Customer_name FROM customer INNER JOIN issuestatus ON 
+customer.Customer_Id = issuestatus.Issued_cust WHERE issuestatus.Issue_date >= '2023-06-01' AND 
+issuestatus.Issue_date <= '2023-06-30';
+ 
+9. Retrieve book_title from book table containing history. 
+
+SELECT book_title FROM books WHERE Category = 'history';
+
+10.Retrieve the branch numbers along with the count of employees for branches having more than 5 employees
+
+SELECT branch_no, COUNT(emp_id) FROM employee GROUP BY branch_no HAVING COUNT(Emp_id) > 5;
+ 
+11. Retrieve the names of employees who manage branches and their respective branch addresses.
+
+SELECT EMPLOYEE.branch_no, Emp_name, Branch_address FROM employee LEFT JOIN  BRANCH ON  employee.branch_no=BRANCH.branch_no where Position='Manager';
+
+12.  Display the names of customers who have issued books with a rental price higher than Rs. 25.
+SELECT Customer_name FROM CUSTOMER WHERE Customer_Id IN (SELECT Issued_cust FROM issuestatus inner join BOOKS ON issuestatus.Isbn_book=BOOKS.ISBN WHERE Rental_Price
+>25);
+
 
