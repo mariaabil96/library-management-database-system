@@ -80,3 +80,53 @@ INSERT INTO BRANCH(Branch_no , Manager_id , Branch_address , Contact_no) VALUES 
 #DISPLAYING BRANCH TABLE
 SELECT * FROM BRANCH;
 
+INSERT INTO EMPLOYEE(Emp_id,Emp_name,Position,Salary,branch_no) VALUES ('E1', 'ABIL SEBASTIAN', 'Manager', '60000', 'B1'),
+('E2', 'MARIA JOSE', 'Clerk', '45000', 'B2'),
+('E3', 'ANNIE JOHN', 'Librarian', '55000', 'B3'),
+('E4', 'JOJO JOSE', 'Assistant', '40000', 'B4'),
+('E5', 'ROSE MARIA JOSE', 'Assistant', '42000', 'B2'),
+('E6', 'JOMINA JOSEPH', 'Assistant', '43000', 'B3'),
+('E7', 'ANEESHA MOL', 'Manager', '62000', 'B2'),
+('E8', 'MARTIN SANTHOSH', 'Clerk', '46000', 'B3'),
+('E9', 'MAREENA CLEETUS', 'Librarian', '57000', 'B4'),
+('E10', 'KRISTIN ZAC', 'Assistant', '41000', 'B4'),
+('E11', 'BABY JOSEPH', 'Manager', '65000', 'B5');
+
+#DISPLAYING EMPLOYEE TABLE
+SELECT * FROM EMPLOYEE;
+
+#INSERTING VALUES TO BOOKS TABLE
+INSERT INTO BOOKS(ISBN,Book_title,Category,Rental_Price,Status,Author,Publisher) VALUES ('978-0-09-957807-9', 'A Game of Thrones', 'Fantasy', 10, 'Yes', 'George R.R. Martin', 'abc'),
+('978-0-14-044930-3', 'The Lord of the Rings', 'Fantasy', 15, 'Yes', 'JRR Tolkien.', 'def'),
+('978-0-14-118776-1', 'NAME OF WIND', 'Fantasy', 20, 'Yes', 'Patrick Rothfuss', 'ghi'),
+('978-0-141-44171-6', 'Fried Green Tomatoes at the Whistle Stop Cafe', 'Fiction', 7, 'Yes', 'Fannie Flagg', 'jkl'),
+('978-0-19-280551-1', 'The Travelling Cat Chronicles', 'Fiction', 12, 'No', 'Hiro Arikawa', 'mno'),
+('978-0-307-37840-1', 'Vanishing maps', 'Fiction', 7, 'Yes', 'cristina garcia', 'pqr'),
+('978-0-307-58837-1', 'guns of august', 'History', 9, 'Yes', 'babba', 'stu'),
+('978-0-330-25864-8', 'freedom fighter', 'History', 8, 'No', 'ramakrishnan', 'vw'),
+('978-0-375-41398-8', '1947', 'History', 5.5, 'Yes', 'rasa rao', 'xy'),
+('978-0-393-05081-8', 'socialism', 'History', 6.5, 'Yes', 'patel singh', 'za'),
+('978-0-393-91257-8', 'jai bharat', 'History', 9, 'No', 'arrrav singh', 'bdf'),
+('978-0-525-47535-5', 'hamlet', 'Classic', 7, 'Yes', 'shakespere', 'ldr'),
+('978-0-553-29698-2', 'pride and prejudice', 'Classic', 8, 'Yes', 'jane austen', 'bts'),
+('978-0-679-76489-8', 'wuthering heights', 'Classic', 7, 'Yes', 'emily', 'bro');
+
+
+#DISPLAYING BOOKS TABLE
+SELECT * FROM BOOKS;
+
+INSERTING VALUES TO CUSTOMER TABLE
+INSERT INTO CUSTOMER(Customer_Id,Customer_name,Customer_address,Reg_date) VALUES ('C1', 'Alice Johnson ','123abc st','2021-05-12'),
+('C2', 'Benny Joseph ','456 def st','2021-05-06'),
+('C3', 'Carolin Davis ','789 oo St','2021-02-03'),
+('C4', 'Denny Wilson ','567 Po St','2021-08-04'),
+('C5', 'Elizabeth Brown ','890 Mm St','2021-02-21'),
+('C6', 'Francis Thomas ','789 oo St','2021-02-03'),
+('C7', 'Grace Taylor ','123abc st','2021-01-24'),
+('C8', 'Henna Anson ','456 Bi St','2021-05-01'),
+('C9', 'Irin Martin ','567 Oak St','2022-04-30'),
+('C10', 'Jacky Wilson ','789 oo St','2022-12-01');
+
+#DISPLAYING CUSTOMER TABLE
+SELECT * FROM CUSTOMER;
+
